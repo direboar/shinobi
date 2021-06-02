@@ -3,20 +3,12 @@
     <v-container class="pa-0" fluid fill-height>
       <v-row>
         <v-col cols="6">
-          <iframe
-            class="mini"
-            width="600"
-            height="400"
-            src="https://character-sheets.appspot.com/shinobigami/edit.html?key=ahVzfmNoYXJhY3Rlci1zaGVldHMtbXByFwsSDUNoYXJhY3RlckRhdGEY7Kz-wAMM"
-          ></iframe>
+          <v-text-field label="URL" v-model="url" />
+          <iframe class="mini" width="600" height="400" :src="url"></iframe>
         </v-col>
         <v-col cols="6">
           <v-card>
-            <iframe
-              width="1000"
-              height="800"
-              src="https://character-sheets.appspot.com/shinobigami/edit.html?key=ahVzfmNoYXJhY3Rlci1zaGVldHMtbXByFwsSDUNoYXJhY3RlckRhdGEY7Kz-wAMM"
-            ></iframe>
+            <iframe width="1000" height="800" :src="url"></iframe>
           </v-card>
           <!-- <v-dialog v-model="dialog" fullscreen>
             <template v-slot:activator="{ on, attrs }">
@@ -59,6 +51,7 @@ export default {
   data() {
     return {
       dialog: false,
+      url: 'https://character-sheets.appspot.com/shinobigami/edit.html?key=ahVzfmNoYXJhY3Rlci1zaGVldHMtbXByFwsSDUNoYXJhY3RlckRhdGEY7Kz-wAMM',
     }
   },
 }
